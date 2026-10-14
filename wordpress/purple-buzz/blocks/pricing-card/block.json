@@ -1,0 +1,48 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "purple-buzz/pricing-card",
+	"title": "Pricing Card",
+	"category": "design",
+	"icon": "money-alt",
+	"description": "Pricing plan card with price, feature list and call to action button.",
+	"keywords": [ "pricing", "plan", "price", "table" ],
+	"textdomain": "purple-buzz",
+	"attributes": {
+		"planName": {
+			"type": "string",
+			"default": "Standard Plan"
+		},
+		"price": {
+			"type": "string",
+			"default": "$120"
+		},
+		"period": {
+			"type": "string",
+			"default": "/Year"
+		},
+		"features": {
+			"type": "array",
+			"default": [ "25 to 99 Users", "10 TB space", "Live Chat" ]
+		},
+		"highlighted": {
+			"type": "boolean",
+			"default": false
+		},
+		"buttonLabel": {
+			"type": "string",
+			"default": "Get Now"
+		},
+		"buttonUrl": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"supports": {
+		"html": false,
+		"align": [ "wide" ],
+		"reusable": true
+	},
+	"editorScript": "file:./index.js",
+	"render": "file:./render.php"
+}
