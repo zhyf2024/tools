@@ -1,0 +1,4 @@
+website-downloader --url https://templatemo.com/ --destination ./templatemo.com --max-pages 20000 --sitemap https://templatemo.com/sitemap.xml
+
+website-downloader --url https://www.tooplate.com/ --destination ./tooplate.com --max-pages 20000 --sitemap https://www.tooplate.com/sitemap.html
+
