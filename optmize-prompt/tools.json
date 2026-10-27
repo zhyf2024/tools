@@ -1,0 +1,158 @@
+[
+  {
+    "name": "calculate_mortgage",
+    "description": "根据贷款总额、年利率和还款年限，计算每月等额本息或等额本金的还款金额。",
+    "parameters": {
+      "loan_amount": {"type": "number", "description": "贷款总总金额，单位为元"},
+      "annual_rate": {"type": "number", "description": "年化贷款利率，例如 0.045 表示 4.5%"},
+      "years": {"type": "integer", "description": "贷款年限"}
+    }
+  },
+  {
+    "name": "query_inventory_level",
+    "description": "查询指定商品在特定仓库中的当前库存数量以及预警状态。",
+    "parameters": {
+      "sku_id": {"type": "string", "description": "商品的唯一库存单元编码"},
+      "warehouse_code": {"type": "string", "description": "目标仓库的代码或名称"}
+    }
+  },
+  {
+    "name": "generate_qrcode_link",
+    "description": "将指定的网址或文本内容转换为可供下载和扫描的二维码图片链接。",
+    "parameters": {
+      "content": {"type": "string", "description": "需要生成二维码的原始 URL 链接或文本内容"},
+      "size": {"type": "integer", "description": "二维码的像素尺寸，如 250"}
+    }
+  },
+  {
+    "name": "analyze_text_sentiment",
+    "description": "对用户输入的评论或反馈文本进行情感倾向分析，返回正向、负向或中性的概率分值。",
+    "parameters": {
+      "text": {"type": "string", "description": "需要进行情感分析的中文文本内容"}
+    }
+  },
+  {
+    "name": "convert_currency_amount",
+    "description": "基于实时汇率，将指定金额从一种货币转换为另一种货币。",
+    "parameters": {
+      "amount": {"type": "number", "description": "需要转换的原始金额"},
+      "from_currency": {"type": "string", "description": "源货币标准代码，如 CNY, USD"},
+      "to_currency": {"type": "string", "description": "目标货币标准代码，如 EUR, JPY"}
+    }
+  },
+  {
+    "name": "fetch_weather_forecast",
+    "description": "获取指定城市未来三天的天气预报，包括温度区间、天气现象及风向风力。",
+    "parameters": {
+      "city_name": {"type": "string", "description": "中国县级及以上城市名称，如 北京、深圳"}
+    }
+  },
+  {
+    "name": "extract_invoice_info",
+    "description": "通过 OCR 技术识别增值税发票图片，提取发票代码、金额、税额及开票日期等核心关键字段。",
+    "parameters": {
+      "image_url": {"type": "string", "description": "存储发票图片的公开可访问的网络链接"}
+    }
+  },
+  {
+    "name": "reset_user_password",
+    "description": "在后台系统管理中，为指定的异常或忘记密码的用户强制重置为临时随机密码，并通过短信通知。",
+    "parameters": {
+      "user_id": {"type": "string", "description": "系统内用户的唯一工号或账号"},
+      "phone_number": {"type": "string", "description": "用户绑定的手机号码，用于接收新密码通知"}
+    }
+  },
+  {
+    "name": "search_academic_papers",
+    "description": "根据关键词、作者或出版年份，在全球学术数据库中检索相关的期刊和会议论文摘要。",
+    "parameters": {
+      "keyword": {"type": "string", "description": "论文检索的核心关键词或研究领域"},
+      "author": {"type": "string", "description": "论文作者的姓名，可选参数"}
+    }
+  },
+  {
+    "name": "calculate_body_mass_index",
+    "description": "根据用户的身高和体重计算 BMI 指数，并返回肥胖程度的健康评估建议。",
+    "parameters": {
+      "weight_kg": {"type": "number", "description": "用户的体重，单位为公斤 (kg)"},
+      "height_cm": {"type": "number", "description": "用户的身高，单位为厘米 (cm)"}
+    }
+  },
+  {
+    "name": "get_log_streams",
+    "description": "实时检索云服务器集群中指定应用服务在特定时间段内的异常或错误日志流。",
+    "parameters": {
+      "service_name": {"type": "string", "description": "微服务的名称，如 auth-service"},
+      "log_level": {"type": "string", "description": "日志级别过滤，如 ERROR, WARN, INFO"}
+    }
+  },
+  {
+    "name": "calculate_express_fee",
+    "description": "根据包裹的重量、体积以及寄件地和收件地，预估各大快递公司的物流寄送费用。",
+    "parameters": {
+      "weight": {"type": "number", "description": "包裹的实际重量，单位为公斤 (kg)"},
+      "sender_province": {"type": "string", "description": "发件人所在的省份"},
+      "receiver_province": {"type": "string", "description": "收件人所在的省份"}
+    }
+  },
+  {
+    "name": "get_holiday_status",
+    "description": "查询中国法定节假日安排，判断指定日期是法定工作日、调休工作日还是法定节假日。",
+    "parameters": {
+      "date_str": {"type": "string", "description": "目标查询日期，格式为 YYYY-MM-DD"}
+    }
+  },
+  {
+    "name": "translate_programming_code",
+    "description": "利用代码模型将一种编程语言编写的代码片段等价转换为另一种编程语言的代码。",
+    "parameters": {
+      "source_code": {"type": "string", "description": "输入的原始代码字符串"},
+      "from_lang": {"type": "string", "description": "源编程语言，如 Python"},
+      "to_lang": {"type": "string", "description": "目标编程语言，如 Go"}
+    }
+  },
+  {
+    "name": "query_flight_status",
+    "description": "实时查询指定航班号的起降时间、当前状态（如延误、取消、起飞）及登机口变更信息。",
+    "parameters": {
+      "flight_number": {"type": "string", "description": "航空公司航班号，如 CA1501"}
+    }
+  },
+  {
+    "name": "compress_uploaded_image",
+    "description": "对用户上传的大体积图片进行无损或轻微有损压缩，减小文件体积并输出新链接。",
+    "parameters": {
+      "file_path": {"type": "string", "description": "图片在服务器上的临时存储路径"},
+      "quality": {"type": "integer", "description": "压缩质量百分比，取值 1-100，默认 80"}
+    }
+  },
+  {
+    "name": "check_domain_whois",
+    "description": "查询特定互联网域名的 WHOIS 注册信息，包括注册人、注册机构、过期时间及 DNS 服务器。",
+    "parameters": {
+      "domain_name": {"type": "string", "description": "待查询的顶级或二级域名，如 google.com"}
+    }
+  },
+  {
+    "name": "generate_marketing_copy",
+    "description": "根据产品的核心卖点、受众标签和期望风格，一键生成用于小红书或朋友圈的营销文案。",
+    "parameters": {
+      "product_features": {"type": "string", "description": "产品的核心优势和亮点描述"},
+      "tone_style": {"type": "string", "description": "文案风格，如 幽默、专业、种草"}
+    }
+  },
+  {
+    "name": "query_drug_interactions",
+    "description": "检查两种或多种临床药物合并使用时是否存在配伍禁忌、不良相互作用或药效降低的风险。",
+    "parameters": {
+      "drug_list": {"type": "string", "description": "需要检查的药物名称列表，多个药物用逗号或空格隔开"}
+    }
+  },
+  {
+    "name": "shorten_long_url",
+    "description": "将冗长复杂的网页原始 URL 链接缩短转换为便于在短信或微博分发的短网址（t.cn风格）。",
+    "parameters": {
+      "long_url": {"type": "string", "description": "需要缩短的完整长链接 URL"}
+    }
+  }
+]
