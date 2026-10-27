@@ -1,4 +1,10 @@
+python -m venv .venv
+.venv\Scripts\activate        # macOS/Linux: source .venv/bin/activate
+pip install -e .
+
 website-downloader --url https://templatemo.com/ --destination ./templatemo.com --max-pages 20000 --sitemap https://templatemo.com/sitemap.xml
 
 website-downloader --url https://www.tooplate.com/ --destination ./tooplate.com --max-pages 20000 --sitemap https://www.tooplate.com/sitemap.html
+
+rename -n 's/\.html$/.zip/' *.html
 
