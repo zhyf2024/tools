@@ -6,5 +6,10 @@ website-downloader --url https://templatemo.com/ --destination ./templatemo.com 
 
 website-downloader --url https://www.tooplate.com/ --destination ./tooplate.com --max-pages 20000 --sitemap https://www.tooplate.com/sitemap.html
 
+<<<<<<< HEAD
 rename -n 's/\.html$/.zip/' *.html
+=======
+
+uv run website-downloader --url https://themewagon.com/theme-tag/directory-listing/ --destination ./themewagon.com --max-pages 200000  
+>>>>>>> 266387a (add thread spider)
 

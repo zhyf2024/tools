@@ -1,0 +1,35 @@
+[project]
+name = "threadspider"
+version = "0.1.0"
+description = "A multithreaded web scraping framework built on Scrapling"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "scrapling[fetchers]>=0.5",
+]
+
+[tool.uv]
+package = false
+
+[dependency-groups]
+dev = [
+    "pytest>=8",
+    "ruff>=0.17.3",
+]
+
+[tool.ruff]
+line-length = 110
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B", "SIM", "RET", "C4", "PIE", "RUF"]
+ignore = [
+    "E501",    # 日志与文档字符串较长，按行宽约定而非强制
+    "SIM115",  # Pipeline 需要长期持有文件句柄，不能用 with 包起来
+    "RUF001",  # 本项目文档与注释使用中文全角标点，属有意为之
+    "RUF002",
+    "RUF003",
+    "RUF012",  # Spider.start_urls / custom_settings 是有意的类级可变默认值
+    "RUF022",  # __all__ 保留分组注释，不做强制排序
+    "RET504",  # 局部变量直接 return 更易读
+]
